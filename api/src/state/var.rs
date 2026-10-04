@@ -1,6 +1,6 @@
 use steel::*;
 
-use super::EntropyAccount;
+use super::BlackgoldEntropyAccount;
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq, Pod, Zeroable)]
@@ -80,4 +80,4 @@ impl Var {
     }
 }
 
-account!(EntropyAccount, Var);
+account!(BlackgoldEntropyAccount, Var);

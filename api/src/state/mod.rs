@@ -8,7 +8,7 @@ use crate::consts::*;
 
 #[repr(u8)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, IntoPrimitive, TryFromPrimitive)]
-pub enum EntropyAccount {
+pub enum BlackgoldEntropyAccount {
     Var = 0,
 }
 

@@ -1,4 +1,4 @@
-use entropy_api::prelude::*;
+use blackgold_entropy_api::prelude::*;
 use steel::*;
 
 pub fn process_open(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult {
@@ -32,10 +32,11 @@ pub fn process_open(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
         var_info,
         system_program,
         payer_info,
-        &entropy_api::ID,
+        &blackgold_entropy_api::ID,
         &[VAR, &authority_info.key.to_bytes(), &id.to_le_bytes()],
     )?;
-    let var = var_info.as_account_mut::<Var>(&entropy_api::ID)?;
+    
+    let var = var_info.as_account_mut::<Var>(&blackgold_entropy_api::ID)?;
     var.authority = *authority_info.key;
     var.id = id;
     var.provider = *provider_info.key;

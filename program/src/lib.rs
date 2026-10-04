@@ -10,7 +10,7 @@ use open::*;
 use reveal::*;
 use sample::*;
 
-use entropy_api::prelude::*;
+use blackgold_entropy_api::prelude::*;
 use solana_security_txt::security_txt;
 use steel::*;
 
@@ -19,14 +19,14 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     data: &[u8],
 ) -> ProgramResult {
-    let (ix, data) = parse_instruction(&entropy_api::ID, program_id, data)?;
+    let (ix, data) = parse_instruction(&blackgold_entropy_api::ID, program_id, data)?;
 
     match ix {
-        // EntropyInstruction::Open => process_open(accounts, data)?,
-        EntropyInstruction::Close => process_close(accounts, data)?,
-        EntropyInstruction::Next => process_next(accounts, data)?,
-        EntropyInstruction::Reveal => process_reveal(accounts, data)?,
-        EntropyInstruction::Sample => process_sample(accounts, data)?,
+        // BlackgoldEntropyInstruction::Open => process_open(accounts, data)?,
+        BlackgoldEntropyInstruction::Close => process_close(accounts, data)?,
+        BlackgoldEntropyInstruction::Next => process_next(accounts, data)?,
+        BlackgoldEntropyInstruction::Reveal => process_reveal(accounts, data)?,
+        BlackgoldEntropyInstruction::Sample => process_sample(accounts, data)?,
         _ => {
             return Err(trace(
                 "Invalid instruction",
@@ -41,9 +41,9 @@ pub fn process_instruction(
 entrypoint!(process_instruction);
 
 security_txt! {
-    name: "Entropy",
-    project_url: "https://ore.supply",
-    contacts: "email:hardhatchad@gmail.com,discord:hardhatchad",
+    name: "Blackgold Entropy",
+    project_url: "https://blackgold.supply",
+    contacts: "email:druscilla2024@gmail.com",
     policy: "https://github.com/regolith-labs/entropy/blob/master/SECURITY.md",
     preferred_languages: "en",
     source_code: "https://github.com/regolith-labs/entropy"

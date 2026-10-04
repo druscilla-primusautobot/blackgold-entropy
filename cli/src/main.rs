@@ -22,7 +22,8 @@ use solana_sdk::{
 use solana_sdk::{keccak, pubkey};
 use steel::{AccountDeserialize, Clock, Discriminator, Instruction};
 
-const ENTROPY_PROVIDER: Pubkey = pubkey!("AKBXJ7jQ2DiqLQKzgPn791r1ZVNvLchTFH6kpesPAAWF");
+//& Druscilla: Constants: PDA using var and program id
+const ENTROPY_PROVIDER: Pubkey = pubkey!("A7jpqQsy4HA5Q6L6Gt1UDbKAx6r4391PkBa4lM8wu7Da");
 
 #[tokio::main]
 async fn main() {

@@ -2,7 +2,7 @@ use steel::*;
 
 #[repr(u8)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, TryFromPrimitive)]
-pub enum EntropyInstruction {
+pub enum BlackgoldEntropyInstruction {
     Open = 0,
     Close = 1,
     Next = 2,
@@ -49,8 +49,8 @@ pub struct Reveal {
 #[derive(Clone, Copy, Debug, Pod, Zeroable)]
 pub struct Sample {}
 
-instruction!(EntropyInstruction, Open);
-instruction!(EntropyInstruction, Close);
-instruction!(EntropyInstruction, Next);
-instruction!(EntropyInstruction, Reveal);
-instruction!(EntropyInstruction, Sample);
+instruction!(BlackgoldEntropyInstruction, Open);
+instruction!(BlackgoldEntropyInstruction, Close);
+instruction!(BlackgoldEntropyInstruction, Next);
+instruction!(BlackgoldEntropyInstruction, Reveal);
+instruction!(BlackgoldEntropyInstruction, Sample);

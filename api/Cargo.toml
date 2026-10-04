@@ -1,5 +1,5 @@
 [package]
-name = "entropy-api"
+name = "blackgold-entropy-api"
 description = "API for interacting with the Entropy program"
 version.workspace = true
 edition.workspace = true

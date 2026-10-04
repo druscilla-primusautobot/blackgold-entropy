@@ -1,4 +1,4 @@
-use entropy_api::prelude::*;
+use blackgold_entropy_api::prelude::*;
 use steel::*;
 
 pub fn process_next(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult {
@@ -13,7 +13,7 @@ pub fn process_next(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
     };
     signer_info.is_signer()?;
     let var = var_info
-        .as_account_mut::<Var>(&entropy_api::ID)?
+        .as_account_mut::<Var>(&blackgold_entropy_api::ID)?
         .assert_mut_msg(|v| v.authority == *signer_info.key, "Invalid var authority")?
         .assert_mut_msg(|v| clock.slot > v.end_at, "Not ready to next")?
         .assert_mut_msg(|v| v.slot_hash != [0; 32], "Slot hash not sampled")?

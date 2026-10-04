@@ -1,5 +1,5 @@
 [package]
-name = "entropy-program"
+name = "blackgold-entropy-program"
 description = ""
 version.workspace = true
 edition.workspace = true

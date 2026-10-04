@@ -2,14 +2,15 @@
 resolver = "2"
 members = ["api", "program"]
 
+# TODO
 [workspace.package]
 version = "0.1.6"
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://ore.supply/entropy"
+homepage = "https://blackgold.supply/entropy"
 description = "Secure random number generator on Solana."
-documentation = "https://docs.rs/entropy-api/latest/entropy_api/"
-repository = "https://github.com/regolith-labs/entropy"
+documentation = "https://docs.rs/blackgold-entropy-api/latest/blackgold_entropy_api/"
+repository = "https://github.com/regolith-labs/blackgold-entropy"
 readme = "./README.md"
 keywords = ["solana"]
 

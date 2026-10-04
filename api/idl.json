@@ -1,6 +1,6 @@
 {
     "version": "0.1.5",
-    "name": "entropy",
+    "name": "blackgold-entropy",
     "instructions": [
         {
             "name": "open",
@@ -326,7 +326,7 @@
         }
     ],
     "metadata": {
-        "address": "3jSkUuYBoJzQPMEzTvkDFXCZUBksPamrVhrnHR9igu2X",
+        "address": "BGLDPCwHunLSRmgmqyjuJbLWAbNd2g1T7fYydUnLKtc8",
         "origin": "steel"
     }
 }
