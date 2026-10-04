@@ -17,6 +17,7 @@ pub fn process_open(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
     };
     authority_info.is_signer()?;
     payer_info.is_signer()?;
+
     // provider_info.is_signer()?;
     var_info.is_empty()?.is_writable()?;
     system_program.is_program(&system_program::ID)?;
@@ -28,6 +29,7 @@ pub fn process_open(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
     );
 
     // Create var account.
+    //& This creates the variable account and initializes it with the provided parameters.
     create_program_account::<Var>(
         var_info,
         system_program,
@@ -35,7 +37,9 @@ pub fn process_open(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
         &blackgold_entropy_api::ID,
         &[VAR, &authority_info.key.to_bytes(), &id.to_le_bytes()],
     )?;
-    
+
+    //& This sets the initial state of the variable.
+    // Initialize the variable.
     let var = var_info.as_account_mut::<Var>(&blackgold_entropy_api::ID)?;
     var.authority = *authority_info.key;
     var.id = id;

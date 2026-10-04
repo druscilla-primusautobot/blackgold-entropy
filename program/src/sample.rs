@@ -23,7 +23,8 @@ pub fn process_sample(accounts: &[AccountInfo<'_>], _data: &[u8]) -> ProgramResu
     let slot_hashes =
         bincode::deserialize::<SlotHashes>(slot_hashes_sysvar.data.borrow().as_ref()).unwrap();
 
-    // Record the sampled slot hash.
+        //&OLD LOGIC
+        // Record the sampled slot hash.
     // if let Some(slot_hash) = slot_hashes.get(&var.end_at) {
     //     var.slot_hash = slot_hash.to_bytes();
     //     sol_log(&format!(
@@ -40,7 +41,10 @@ pub fn process_sample(accounts: &[AccountInfo<'_>], _data: &[u8]) -> ProgramResu
     //         hash.to_string()
     //     ));
     // }
+        //&OLD LOGIC
 
+
+    // Aggregate multiple slot hashes for better randomness.
     // Collect multiple slot hashes for aggregation.
     let mut buf = Vec::with_capacity(32 * 4); // 4 slots → 128 bytes total
 
