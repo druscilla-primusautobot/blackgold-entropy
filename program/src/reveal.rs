@@ -32,14 +32,12 @@ pub fn process_reveal(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResul
         .assert_mut_msg(|v| v.seed == [0; 32], "Seed already revealed")? // Added: Ensure the seed is not already revealed
         .assert_mut_msg(|v| v.samples > 0, "No samples remaining")?; //Added: Ensure there are samples remaining
 
-    
     //& Step 4 — Finalize the variable
     // Finalize the variable.
     var.finalize(seed)?;
 
     //* Logging the reveal for transparency.
     sol_log(&format!("Var {} revealed with seed {:?}", var.id, seed));
-
 
     Ok(())
 }
