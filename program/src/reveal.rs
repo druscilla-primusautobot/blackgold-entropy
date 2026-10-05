@@ -9,7 +9,6 @@ pub fn process_reveal(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResul
     let seed = args.seed;
 
     //& Step 2 — Load accounts
-    
     // Clock sysvar is used to validate the end_at slot.
     let clock = Clock::get()?;
 

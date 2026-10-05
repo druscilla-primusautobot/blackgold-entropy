@@ -2,6 +2,7 @@ use blackgold_entropy_api::prelude::*;
 use solana_program::{log::sol_log, slot_hashes::SlotHashes};
 use steel::*;
 
+
 pub fn process_sample(accounts: &[AccountInfo<'_>], _data: &[u8]) -> ProgramResult {
     // Load accounts.
     let clock = Clock::get()?;
